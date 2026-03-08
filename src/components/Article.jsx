@@ -9,15 +9,26 @@ export default function Article() {
     const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
     useEffect(() => {
+        let lastWidth = window.innerWidth;
+        let lastHeight = window.innerHeight;
+
         function handleResize() {
-            setWindowWidth(window.innerWidth);
-            setWindowHeight(window.innerHeight);
+            const newWidth = window.innerWidth;
+            const newHeight = window.innerWidth;
+
+            if (newWidth !== lastWidth || newHeight !== lastHeight) {
+                setWindowWidth(newWidth);
+                setWindowHeight(newHeight);
+                lastWidth = newWidth;
+                lastHeight = newHeight;
+            }
         }
         window.addEventListener('resize', handleResize);
         return () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
 
     return (
         <div>

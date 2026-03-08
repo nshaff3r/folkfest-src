@@ -35,7 +35,7 @@ export const ScrollContainer = (props) => {
                     <Step data={start + index} key={start + index}>
                         <div
                             className="relative w-[100px] h-[100px]"
-                            style={{ marginBottom: 0.45 * height + 'px' }}
+                            style={{ marginBottom: 0.9 * height + 'px' }}
                         >
                             <p
                                 className="scroll_font text-center"
@@ -61,8 +61,8 @@ const MAROON_IMAGES = [
 const CENTERED_TEXT_CONFIG = [
     { textIndex: 0, stepMin: 0, stepMax: 1, classExtras: 'max-w-[500px] rounded-lg p-4', visibleOpacity: 'opacity-100' },
     { textIndex: 1, stepMin: 2, stepMax: 2, classExtras: 'max-w-[400px] p-1', visibleOpacity: 'opacity-90' },
-    { textIndex: 5, stepMin: 7, stepMax: 7, classExtras: 'max-w-[500px] rounded-lg p-4', visibleOpacity: 'opacity-100' },
-    ...([9, 10, 11].map((textIndex, i) => ({
+    { textIndex: 5, stepMin: 7, stepMax: 8, classExtras: 'max-w-[500px] rounded-lg p-4', visibleOpacity: 'opacity-100' },
+    ...([9, 10, 11, 12].map((textIndex, i) => ({
         textIndex,
         stepMin: 11 + i,
         stepMax: 11 + i,
@@ -78,6 +78,7 @@ const AnimationContainerOne = (props) => {
     const spacing = [50, 15, 50];
     const showMaroon = currentStepIndex === 2 || currentStepIndex === 3;
 
+
     const barProgress = useTransform(
         scrollYProgress,
         [barStart, barLength],
@@ -85,7 +86,7 @@ const AnimationContainerOne = (props) => {
     );
 
     return (
-        <div style={{ height: `${0.67 * textArray.length * height}px` }}>
+        <div style={{ height: `${1.35 * textArray.length * height}px` }}>
             <div className="sticky top-0 h-screen flex items-stretch">
                 <div className="relative flex flex-col w-screen h-full overflow-hidden">
                     <ScrollBar scrollYProgress={barProgress} />
@@ -136,7 +137,8 @@ const AnimationContainerOne = (props) => {
                         return (
                             <p
                                 key={index}
-                                className={`text-2xl font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] transition-opacity duration-[500ms] bg-white ${classExtras} ${visible ? visibleOpacity : 'opacity-0'}`}
+                                className={`text-2xl font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] transition-opacity duration-[500ms] bg-white
+                                    ${classExtras} ${visible ? visibleOpacity : 'opacity-0'}`}
                             >
                                 {textArray[textIndex]}
                             </p>
@@ -162,7 +164,7 @@ const AnimationContainerTwo = (props) => {
 
 
     return (
-        <div style={{ height: `${size * textArray.length * height}px` }}>
+        <div style={{ height: size + 'vh' }}>
             <div className="sticky top-0 h-screen w-full relative flex justify-center">
                 <ScrollBar scrollYProgress={barProgress} />
             {imageArray.map((el, index) => (
@@ -175,7 +177,7 @@ const AnimationContainerTwo = (props) => {
                         <img
                             src={el[0]}
                             className={`mt-[20px] top-0 w-full h-auto object-contain lg:mt-0 lg:max-w-5xl lg:w-full
-                                transition-opacity duration-[1500ms] max-h-[70vh]
+                                transition-opacity duration-[1500ms] max-h-[50vh] sm:max-h-[70vh]
                                 ${el[1] <= currentStepIndex && currentStepIndex <= el[2] || 
                                     (currentStepIndex == 11  && el[1] == 0) ? 'opacity-100' : 'opacity-0'}`}
                         />

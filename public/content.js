@@ -18,7 +18,7 @@ export const s1 = [
    "From 10 a.m. to 6 p.m. on Saturday, February 21, a marathon of workshops unfurled across the three floors of Ida Noyes.",
    "Quilting", "Shanty Singing", "Barn Dancing",
    "Each year, the UChicago Folk Festival offers free workshops, celebrating traditions and sharing knowledge, between its Friday and Saturday night performances.",
-   "Each year, the UChicago Folk Festival offers free workshops, celebrating traditions and sharing knowledge, between its Friday and Saturday night performances.",
+   "It is the spirit of these workshops, beating through singing, dancing, and community, that keeps the long-standing festival alive.", ""
 ];
 
 export const p1 = [
@@ -96,7 +96,7 @@ export const sections = [
             paragraphText: p1,
             imageArray: i1,
             start: 1,
-            barLength: 0.91,
+            barLength: 0.93,
             barStart: 0.07,
         },
         {
@@ -106,24 +106,24 @@ export const sections = [
             start: 12,
             barLength: 0.71,
             barStart: 0.23,
-            size: 1.1
+            size: 230
         },
         {
             scrollText: s3,
             paragraphText: p3,
             imageArray: i3,
             start: 15,
-            barLength: 0.83,
+            barLength: 0.78,
             barStart: 0.18,
-            size: .95
+            size: 310
         },
         {
             scrollText: s4,
             paragraphText: p4,
             imageArray: i4,
             start: 18,
-            barLength: 0.88,
+            barLength: 0.82,
             barStart: 0.15,
-            size: .88
+            size: 375
         },
     ];

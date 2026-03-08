@@ -17,7 +17,7 @@ const MaroonLogo = () => {
     return (
         <a
             href="https://chicagomaroon.com/"
-            className="w-[300px] md:w-[400px] absolute top-[20px]"
+            className="w-[300px] md:w-[400px] absolute top-[10px]"
         >
             <img
                 className="w-[300px] md:w-[400px] absolute top-[20px]"
@@ -40,7 +40,7 @@ const Headline = ({ windowWidth, windowHeight }) => {
                 className="font-boldtext text-[black]
                 sm:text-white"
                 style={{
-                    fontSize: windowWidth < 640 ? windowHeight < 800 ? '2.3em' : '2.8em' : '3.2em',
+                    fontSize: windowWidth < 640 ? windowHeight < 800 ? '2em' : '2.8em' : '3.2em',
                     lineHeight: windowHeight < 800 ? '1.2em' : '1.1em',
                 }}
                 dangerouslySetInnerHTML={{ __html: windowWidth < 640 ? headlinesm : headlinelg }}
@@ -69,13 +69,13 @@ const Subhead = ({ windowWidth }) => {
 const Byline = ({ windowWidth }) => {
     return (
         <div
-            className="px-3 sm:px-12 mx-auto relative mt-5 text-[black] w-[90vw]
+            className="px-1 sm:px-12 mx-auto relative mt-5 text-[black] w-[90vw]
              top-[100vh]"
         >
             {byline.map((text, index) => (
                 <p
                     key={index}
-                    className="text-sm sm:text-lg"
+                    className="text-md sm:text-lg"
                     dangerouslySetInnerHTML={{ __html: text }}
                 ></p>
                 ))}
